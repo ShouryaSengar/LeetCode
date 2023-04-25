@@ -1,17 +1,31 @@
 class SmallestInfiniteSet {
 public:
-    int cur = 1;
-    set<int> added; 
+    SmallestInfiniteSet() {
+        next_num = 1;
+    }
+    
     int popSmallest() {
-        if (!added.empty()) {
-            int res = *begin(added);
-            added.erase(begin(added));
-            return res;
+        if (!added_back_heap.empty()) {
+            int smallest = added_back_heap.top();
+            added_back_heap.pop();
+            added_back_set.erase(smallest);
+            return smallest;
         }
-        return cur++;
+        
+        int num_to_return = next_num;
+        next_num++;
+        return num_to_return;
     }
+    
     void addBack(int num) {
-        if (num < cur)
-            added.insert(num);
+        if (num < next_num && added_back_set.find(num) == added_back_set.end()) {
+            added_back_set.insert(num);
+            added_back_heap.push(num);
+        }
     }
+
+private:
+    int next_num;
+    std::priority_queue<int, std::vector<int>, std::greater<int>> added_back_heap;
+    std::set<int> added_back_set;
 };
