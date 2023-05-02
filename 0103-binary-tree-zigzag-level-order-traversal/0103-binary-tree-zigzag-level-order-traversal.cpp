@@ -25,6 +25,10 @@ public:
         while(!pendingNodes.empty())
         {
             int size = pendingNodes.size();
+            if(size==0)
+            {
+                return ans;
+            }
             vector<int> row;
             while(size-- > 0)
             {
