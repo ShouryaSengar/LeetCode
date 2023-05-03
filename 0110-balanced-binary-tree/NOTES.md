@@ -1,0 +1,1 @@
+We can also use pair class which would return height and ans, in one call.
