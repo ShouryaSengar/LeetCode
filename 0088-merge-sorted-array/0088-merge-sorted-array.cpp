@@ -42,6 +42,6 @@ public:
         }
         for(int x=0; x<ans.size(); ++x) {
             nums1[x]=ans[x];
-        }
+        }  
     }
 };
