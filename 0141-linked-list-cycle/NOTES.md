@@ -1,0 +1,1 @@
+At any instant if the address of fast and slow pointer matches that means a loop is formed, else no loop.
