@@ -1,0 +1,1 @@
+here in this matrix we are **reducing our search space by half in each row**,  then half of that row and so on...i.e Binary Search of Matrix.
